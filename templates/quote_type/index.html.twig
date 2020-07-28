@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}QuoteType index{% endblock %}
+
+{% block body %}
+    <h1>QuoteType index</h1>
+
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Name</th>
+                <th>actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for quote_type in quote_types %}
+            <tr>
+                <td>{{ quote_type.id }}</td>
+                <td>{{ quote_type.name }}</td>
+                <td>
+                    <a href="{{ path('quote_type_show', {'id': quote_type.id}) }}">show</a>
+                    <a href="{{ path('quote_type_edit', {'id': quote_type.id}) }}">edit</a>
+                </td>
+            </tr>
+        {% else %}
+            <tr>
+                <td colspan="3">no records found</td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <a href="{{ path('quote_type_new') }}">Create new</a>
+{% endblock %}
