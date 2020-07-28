@@ -17,6 +17,8 @@ class AuthorController extends AbstractController
 {
     /**
      * @Route("/", name="author_index", methods={"GET"})
+     * @param  AuthorRepository  $authorRepository
+     * @return Response
      */
     public function index(AuthorRepository $authorRepository): Response
     {
@@ -27,6 +29,8 @@ class AuthorController extends AbstractController
 
     /**
      * @Route("/new", name="author_new", methods={"GET","POST"})
+     * @param  Request  $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,8 @@ class AuthorController extends AbstractController
 
     /**
      * @Route("/{id}", name="author_show", methods={"GET"})
+     * @param  Author  $author
+     * @return Response
      */
     public function show(Author $author): Response
     {
@@ -60,6 +66,9 @@ class AuthorController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="author_edit", methods={"GET","POST"})
+     * @param  Request  $request
+     * @param  Author  $author
+     * @return Response
      */
     public function edit(Request $request, Author $author): Response
     {
@@ -80,6 +89,9 @@ class AuthorController extends AbstractController
 
     /**
      * @Route("/{id}", name="author_delete", methods={"DELETE"})
+     * @param  Request  $request
+     * @param  Author  $author
+     * @return Response
      */
     public function delete(Request $request, Author $author): Response
     {

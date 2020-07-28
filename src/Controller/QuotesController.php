@@ -17,6 +17,8 @@ class QuotesController extends AbstractController
 {
     /**
      * @Route("/", name="quotes_index", methods={"GET"})
+     * @param  QuotesRepository  $quotesRepository
+     * @return Response
      */
     public function index(QuotesRepository $quotesRepository): Response
     {
@@ -27,6 +29,8 @@ class QuotesController extends AbstractController
 
     /**
      * @Route("/new", name="quotes_new", methods={"GET","POST"})
+     * @param  Request  $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,8 @@ class QuotesController extends AbstractController
 
     /**
      * @Route("/{id}", name="quotes_show", methods={"GET"})
+     * @param  Quotes  $quote
+     * @return Response
      */
     public function show(Quotes $quote): Response
     {
@@ -60,6 +66,9 @@ class QuotesController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="quotes_edit", methods={"GET","POST"})
+     * @param  Request  $request
+     * @param  Quotes  $quote
+     * @return Response
      */
     public function edit(Request $request, Quotes $quote): Response
     {
@@ -80,6 +89,9 @@ class QuotesController extends AbstractController
 
     /**
      * @Route("/{id}", name="quotes_delete", methods={"DELETE"})
+     * @param  Request  $request
+     * @param  Quotes  $quote
+     * @return Response
      */
     public function delete(Request $request, Quotes $quote): Response
     {

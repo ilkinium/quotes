@@ -1,11 +1,11 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Quotes index{% endblock %}
+{% block title %}Quotes list{% endblock %}
 
 {% block body %}
-    <h1>Quotes index</h1>
+    <h1 class="title">Quotes List</h1>
 
-    <table class="table">
+    <table class="table is-bordered is-striped is-narrow is-hoverable is-fullwidth">
         <thead>
             <tr>
                 <th>Id</th>
@@ -19,8 +19,8 @@
                 <td>{{ quote.id }}</td>
                 <td>{{ quote.body }}</td>
                 <td>
-                    <a href="{{ path('quotes_show', {'id': quote.id}) }}">show</a>
-                    <a href="{{ path('quotes_edit', {'id': quote.id}) }}">edit</a>
+                    <a href="{{ path('quotes_show', {'id': quote.id}) }}"><i class="far fa-eye"></i> show</a>
+                    <a href="{{ path('quotes_edit', {'id': quote.id}) }}"><i class="far fa-edit"></i> edit</a>
                 </td>
             </tr>
         {% else %}
