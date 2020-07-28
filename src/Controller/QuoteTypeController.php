@@ -17,6 +17,8 @@ class QuoteTypeController extends AbstractController
 {
     /**
      * @Route("/", name="quote_type_index", methods={"GET"})
+     * @param  QuoteTypeRepository  $quoteTypeRepository
+     * @return Response
      */
     public function index(QuoteTypeRepository $quoteTypeRepository): Response
     {
@@ -27,6 +29,8 @@ class QuoteTypeController extends AbstractController
 
     /**
      * @Route("/new", name="quote_type_new", methods={"GET","POST"})
+     * @param  Request  $request
+     * @return Response
      */
     public function new(Request $request): Response
     {
@@ -50,6 +54,8 @@ class QuoteTypeController extends AbstractController
 
     /**
      * @Route("/{id}", name="quote_type_show", methods={"GET"})
+     * @param  QuoteType  $quoteType
+     * @return Response
      */
     public function show(QuoteType $quoteType): Response
     {
@@ -60,6 +66,9 @@ class QuoteTypeController extends AbstractController
 
     /**
      * @Route("/{id}/edit", name="quote_type_edit", methods={"GET","POST"})
+     * @param  Request  $request
+     * @param  QuoteType  $quoteType
+     * @return Response
      */
     public function edit(Request $request, QuoteType $quoteType): Response
     {
@@ -80,6 +89,9 @@ class QuoteTypeController extends AbstractController
 
     /**
      * @Route("/{id}", name="quote_type_delete", methods={"DELETE"})
+     * @param  Request  $request
+     * @param  QuoteType  $quoteType
+     * @return Response
      */
     public function delete(Request $request, QuoteType $quoteType): Response
     {
